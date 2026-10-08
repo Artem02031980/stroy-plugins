@@ -1,0 +1,247 @@
+/* ============================================================
+   index.css — служебная страница со списком вариантов главной
+   Палитра проекта: #0A0606 #342924 #504C4B #6F6D6C #908E8D #cccccc #ffffff
+   Три диапазона ширины: до 768 px, 769–1280 px, шире 1280 px.
+   ============================================================ */
+
+:root {
+  --ink: #0A0606;
+  --ink-soft: #342924;
+  --mid: #504C4B;
+  --muted: #6F6D6C;
+  --line: #cccccc;
+  --line-soft: #908E8D;
+  --paper: #ffffff;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.55 "Segoe UI", Tahoma, Arial, sans-serif;
+}
+
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+p { margin: 0 0 12px; }
+ul, ol, dl, dd { margin: 0; padding: 0; }
+li { list-style: none; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* ---------- Шапка ---------- */
+
+.head {
+  padding: 28px 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.head__kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.head__title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -.01em;
+}
+
+.head__lead {
+  margin: 12px 0 0;
+  max-width: 70ch;
+  color: var(--ink-soft);
+}
+
+/* ---------- Ключевые данные ---------- */
+
+.facts {
+  padding: 20px 16px;
+  border-bottom: 1px solid var(--line);
+  background: #fafafa;
+}
+
+.facts__list {
+  display: grid;
+  gap: 16px;
+}
+
+.facts__item dt {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.facts__item dd {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.facts__days {
+  font-variant-numeric: tabular-nums;
+  font-size: 22px;
+}
+
+.facts__note { color: var(--muted); font-weight: 400; font-size: 13px; }
+
+/* ---------- Блоки ---------- */
+
+main { padding: 0 16px 24px; }
+
+.block {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.block h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.block__lead { color: var(--muted); font-size: 14px; }
+
+.block p { max-width: 78ch; }
+
+/* ---------- Названия проекта ---------- */
+
+.names { display: grid; gap: 2px; }
+
+.names li {
+  display: grid;
+  gap: 2px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--ink-soft);
+}
+
+.names__name { font-weight: 700; }
+
+.names__why { font-size: 14px; color: var(--muted); }
+
+/* ---------- Варианты ---------- */
+
+.variants { display: grid; gap: 12px; }
+
+.variant {
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.variant--ready { border-left: 4px solid var(--ink); }
+.variant--wait { border-left: 4px solid var(--line-soft); background: #fafafa; }
+
+.variant__num {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.variant__title { font-size: 18px; }
+
+.variant__desc { margin: 0; color: var(--ink-soft); max-width: 72ch; }
+
+.variant__status { margin: 0; font-size: 14px; font-weight: 600; }
+.variant__status--ready { color: var(--ink); }
+.variant__status--wait { color: var(--muted); font-weight: 400; }
+
+.variant__link {
+  justify-self: start;
+  margin-top: 4px;
+  padding: 10px 14px;
+  background: var(--ink);
+  color: var(--paper);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--ink);
+}
+
+.variant--wait .variant__link {
+  background: var(--paper);
+  color: var(--ink-soft);
+  border-color: var(--line-soft);
+}
+
+.variant__link:hover,
+.variant__link:focus-visible {
+  background: var(--ink-soft);
+  border-color: var(--ink-soft);
+  color: var(--paper);
+}
+
+.variants__note {
+  margin: 14px 0 0;
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 78ch;
+}
+
+/* ---------- Подвал ---------- */
+
+.foot {
+  padding: 20px 16px 32px;
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.foot__people { max-width: 80ch; }
+
+.foot__meta {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--line);
+}
+
+/* ============================================================
+   Диапазон 769–1280 px
+   ============================================================ */
+
+@media (min-width: 769px) {
+  .head { padding: 36px 24px 24px; }
+  .head__title { font-size: 34px; }
+  .facts { padding: 24px; }
+  .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 24px; }
+  main { padding: 0 24px 28px; }
+  .names { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .variants { gap: 14px; }
+  .foot { padding: 24px 24px 36px; }
+}
+
+/* ============================================================
+   Диапазон шире 1280 px
+   ============================================================ */
+
+@media (min-width: 1281px) {
+  .head,
+  .facts,
+  main,
+  .foot {
+    padding-left: max(32px, calc((100% - 1200px) / 2));
+    padding-right: max(32px, calc((100% - 1200px) / 2));
+  }
+
+  .head { padding-top: 48px; }
+  .head__title { font-size: 40px; }
+  .facts__list { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .block { padding: 28px 0; }
+  .names { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .variant { padding: 20px; }
+}

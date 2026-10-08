@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Пять вариантов главной страницы — сайт инженерных инструментов</title>
+<meta name="description" content="Служебная страница проекта: пять вариантов главной страницы сайта инженерных инструментов, сроки и решения, которые нужны от заказчика.">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+<header class="head">
+  <p class="head__kicker">Проект: сайт инженерных инструментов и программ</p>
+  <h1 class="head__title">Пять вариантов главной страницы</h1>
+  <p class="head__lead">
+    Служебная страница для заказчика. С неё открываются все варианты главной страницы,
+    собранные по техническому заданию. Варианты 1 и 2 готовы и ждут обратной связи,
+    варианты 3–5 начнутся после вашего решения по первым двум.
+  </p>
+</header>
+
+<main>
+
+  <section class="facts" aria-labelledby="facts-title">
+    <h2 class="sr-only" id="facts-title">Ключевые данные проекта</h2>
+    <dl class="facts__list">
+      <div class="facts__item">
+        <dt>Заказчик</dt>
+        <dd>Дмитрий Голубев</dd>
+      </div>
+      <div class="facts__item">
+        <dt>Дата начала проекта</dt>
+        <dd>08.10.2026</dd>
+      </div>
+      <div class="facts__item">
+        <dt>Предполагаемая дата окончания</dt>
+        <dd>31.12.2026</dd>
+      </div>
+      <div class="facts__item">
+        <dt>Осталось</dt>
+        <dd>
+          <output id="days-left" class="facts__days">—</output>
+          <span id="days-left-word">дней</span>
+          <noscript><span class="facts__note">(счётчик работает при включённом JavaScript)</span></noscript>
+        </dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="block" aria-labelledby="about-title">
+    <h2 id="about-title">Описание проекта</h2>
+    <p>
+      Сайт для инженеров-проектировщиков и инженеров-конструкторов. Он объединяет три направления:
+      бесплатные онлайн-инструменты — инженерные калькуляторы и утилиты, которыми можно пользоваться
+      без регистрации; каталог собственных программ с описанием, скриншотами, системными требованиями,
+      версией, историей изменений и ценой; статьи и инструкции по расчётам, ссылающиеся на инструменты
+      и программы.
+    </p>
+    <p>
+      Главная задача сайта — органический поисковый трафик. Инженер находит бесплатный калькулятор,
+      решает свою задачу и переходит к профессиональной программе. Поэтому у каждого инструмента будет
+      отдельная индексируемая страница, а архитектура закладывается так, чтобы каталог инструментов,
+      программы и статьи расширялись без переделки сайта.
+    </p>
+  </section>
+
+  <section class="block" aria-labelledby="names-title">
+    <h2 id="names-title">Предлагаемые названия проекта</h2>
+    <p class="block__lead">Десять рабочих вариантов, выведенных из технического задания. Домены и товарные знаки не проверялись.</p>
+    <ol class="names">
+      <li><span class="names__name">РасчётПро</span><span class="names__why">говорит о сути, легко произносится и запоминается</span></li>
+      <li><span class="names__name">Инженер.Онлайн</span><span class="names__why">сразу обозначает онлайн-инструменты</span></li>
+      <li><span class="names__name">Конструктив</span><span class="names__why">профессиональное слово, годится и для программ, и для статей</span></li>
+      <li><span class="names__name">СП-Инструменты</span><span class="names__why">отсылка к сводам правил, понятна проектировщику</span></li>
+      <li><span class="names__name">ИнжЛаб</span><span class="names__why">короткое, удобно для знака, логотипа и домена</span></li>
+      <li><span class="names__name">Расчётный кабинет</span><span class="names__why">про рабочее место инженера, спокойное и предметное</span></li>
+      <li><span class="names__name">СтройРасчёт</span><span class="names__why">понятно широкой аудитории, хорошо ищется</span></li>
+      <li><span class="names__name">Инструменты конструктора</span><span class="names__why">описательное, подходит для заголовков и SEO-текстов</span></li>
+      <li><span class="names__name">Расчёт24</span><span class="names__why">про доступность в любое время, легко читается в логотипе</span></li>
+      <li><span class="names__name">Норматив</span><span class="names__why">про нормативные документы и расчёты по СП</span></li>
+    </ol>
+  </section>
+
+  <section class="block" aria-labelledby="logo-title">
+    <h2 id="logo-title">Наличие логотипа для сайта</h2>
+    <p>
+      <strong>Вывод: логотип нужен, но на этом этапе достаточно шрифтовой части.</strong>
+      Аудитория — инженеры, они ценят сдержанность и предметность, поэтому декоративный знак
+      скорее навредит. На старте название в шапке работает как логотип: оно узнаваемо, не требует
+      отдельной графики и не мешает читать расчёты.
+    </p>
+    <p>
+      Что всё-таки придётся сделать: иконку для вкладки браузера (favicon) и картинку для ссылок
+      в соцсетях и мессенджерах. Для них хватит простого монохромного знака из одной буквы названия,
+      который читается в размере 16×16 пикселей и работает на тёмном и на светлом фоне.
+    </p>
+    <p>
+      Полноценный фирменный знак с инженерной символикой — сечением, эпюрой, болтовым соединением —
+      имеет смысл делать позже: когда название утверждено, появились программы и потребовалось
+      оформлять обложки, страницы программ и настольные приложения.
+    </p>
+  </section>
+
+  <section class="block" aria-labelledby="variants-title">
+    <h2 id="variants-title">Варианты главной страницы</h2>
+    <ul class="variants">
+
+      <li class="variant variant--ready">
+        <p class="variant__num">Вариант 1</p>
+        <h3 class="variant__title">Тёмная страница с боковыми панелями</h3>
+        <p class="variant__desc">
+          Слева — наименования продуктов и список инструментов, справа — дополнительная информация.
+          Строгая сетка, никаких скруглений, тёмная палитра.
+        </p>
+        <p class="variant__status variant__status--ready">Готов — ждёт обратной связи заказчика</p>
+        <a class="variant__link" href="pageIndex1.html">Открыть pageIndex1.html</a>
+      </li>
+
+      <li class="variant variant--ready">
+        <p class="variant__num">Вариант 2</p>
+        <h3 class="variant__title">Светлая страница со свободной композицией</h3>
+        <p class="variant__desc">
+          Крупный первый экран, карточки со скруглениями, переключатель категорий инструментов,
+          лента материалов. Светлая палитра, больше воздуха.
+        </p>
+        <p class="variant__status variant__status--ready">Готов — ждёт обратной связи заказчика</p>
+        <a class="variant__link" href="pageIndex2.html">Открыть pageIndex2.html</a>
+      </li>
+
+      <li class="variant variant--wait">
+        <p class="variant__num">Вариант 3</p>
+        <h3 class="variant__title">Каталог инструментов на первом экране</h3>
+        <p class="variant__desc">
+          Предлагаемое направление: поисковый трафик приходит сразу на инструменты, поэтому каталог
+          и поиск по нему стоят выше рассказа о проекте.
+        </p>
+        <p class="variant__status variant__status--wait">Ждёт обратной связи заказчика, чтобы приступить к работе</p>
+        <a class="variant__link" href="pageIndex3.html">Открыть pageIndex3.html (файл пустой)</a>
+      </li>
+
+      <li class="variant variant--wait">
+        <p class="variant__num">Вариант 4</p>
+        <h3 class="variant__title">Рабочий стол инженера</h3>
+        <p class="variant__desc">
+          Предлагаемое направление: главная как личный рабочий стол — недавние расчёты, избранные
+          инструменты, черновики, готовые отчёты.
+        </p>
+        <p class="variant__status variant__status--wait">Ждёт обратной связи заказчика, чтобы приступить к работе</p>
+        <a class="variant__link" href="pageIndex4.html">Открыть pageIndex4.html (файл пустой)</a>
+      </li>
+
+      <li class="variant variant--wait">
+        <p class="variant__num">Вариант 5</p>
+        <h3 class="variant__title">Витрина программ</h3>
+        <p class="variant__desc">
+          Предлагаемое направление: продажа программ на первом плане, бесплатные инструменты —
+          как доказательство компетенции и вход в воронку.
+        </p>
+        <p class="variant__status variant__status--wait">Ждёт обратной связи заказчика, чтобы приступить к работе</p>
+        <a class="variant__link" href="pageIndex5.html">Открыть pageIndex5.html (файл пустой)</a>
+      </li>
+
+    </ul>
+    <p class="variants__note">
+      Что общего у всех вариантов: ссылки внутри страниц никуда не ведут, изображения — временные
+      заглушки, тексты черновые. Это макеты для выбора направления, а не готовый сайт.
+    </p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot__people">
+    Исполнители: Хмелев Артём (дизайн, frontend), Дмитрий Голубев (координатор проекта,
+    определяющий все направления во время и после окончания работ: дизайн / frontend).
+  </p>
+  <p class="foot__meta">Служебная страница проекта. Обновлена 08.10.2026.</p>
+</footer>
+
+<script src="js/index.js"></script>
+</body>
+</html>

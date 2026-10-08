@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Вариант 2: светлая главная со свободной композицией — инженерные расчёты онлайн</title>
+<meta name="description" content="Макет главной страницы: калькуляторы для инженеров в браузере, каталог программ и статьи по расчётам.">
+<link rel="stylesheet" href="css/pageIndex2.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Перейти к содержимому</a>
+
+<header class="bar">
+  <p class="bar__brand">
+    <span class="bar__mark" aria-hidden="true">И</span>
+    <span class="bar__text">Инженерные инструменты</span>
+  </p>
+
+  <button class="bar__burger" type="button" id="burger" aria-expanded="false" aria-controls="bar-nav">
+    <span class="bar__burger-bars" aria-hidden="true"></span>
+    Меню
+  </button>
+
+  <nav class="bar__nav" id="bar-nav" aria-label="Разделы сайта">
+    <a href="#" data-dead>Инструменты</a>
+    <a href="#" data-dead>Программы</a>
+    <a href="#" data-dead>Статьи</a>
+    <a href="#" data-dead>О проекте</a>
+    <a class="btn btn--dark bar__cta" href="#" data-dead>Программы</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero">
+    <p class="hero__kicker">Бесплатно и без регистрации</p>
+    <h1 class="hero__title">Инженерные расчёты прямо в браузере</h1>
+    <p class="hero__lead">
+      Считайте нагрузки, балки, фундаменты и армирование онлайн. Для полного расчёта —
+      настольные программы с отчётами и чертежами.
+    </p>
+    <p class="hero__actions">
+      <a class="btn btn--dark" href="#" data-dead>Инженерные инструменты</a>
+      <a class="btn btn--light" href="#" data-dead>Программы</a>
+    </p>
+
+    <figure class="shot shot--16x9 hero__shot">
+      <!--
+        MIDJOURNEY (первый экран, 16:9):
+        Bright modern workspace of a structural engineer: laptop with a structural analysis model
+        on screen, technical drawings, steel ruler and calculator on a white desk, soft daylight
+        from a window, calm neutral palette with warm brown accents, no faces, no readable text,
+        photorealistic, --ar 16:9 --style raw
+      -->
+      <img src="img/pageIndex2/3.jpg" alt="Заглушка вместо фотографии рабочего места инженера"
+           width="1024" height="576">
+      <figcaption>Изображение-заглушка 16:9</figcaption>
+    </figure>
+  </section>
+
+  <section class="directions" aria-label="Три направления сайта">
+    <article class="tile">
+      <p class="tile__label">Инструменты</p>
+      <h2 class="tile__title">Калькуляторы и утилиты</h2>
+      <p class="tile__text">Нагрузки, балки, фундаменты, армирование, конвертеры. Считают в браузере, результат — сразу на экране.</p>
+    </article>
+    <article class="tile">
+      <p class="tile__label">Программы</p>
+      <h2 class="tile__title">Полный расчёт и отчёты</h2>
+      <p class="tile__text">Настольные программы: расчётные сочетания, подбор арматуры, проверки по предельным состояниям, готовый отчёт.</p>
+    </article>
+    <article class="tile">
+      <p class="tile__label">Статьи</p>
+      <h2 class="tile__title">Инструкции и нормативы</h2>
+      <p class="tile__text">Разборы расчётов по СП, работа с результатами SCAD и ЛИРА-САПР, приёмы работы в Revit.</p>
+    </article>
+  </section>
+
+  <section class="tools" aria-labelledby="tools-title">
+    <h2 class="section-title" id="tools-title">Популярные инструменты</h2>
+    <p class="section-lead">Выберите категорию — список обновится без перезагрузки страницы.</p>
+
+    <div class="pills" role="group" aria-label="Категории инструментов">
+      <button class="pill is-active" type="button" data-filter="all" aria-pressed="true">Все</button>
+      <button class="pill" type="button" data-filter="loads" aria-pressed="false">Нагрузки</button>
+      <button class="pill" type="button" data-filter="concrete" aria-pressed="false">Железобетон</button>
+      <button class="pill" type="button" data-filter="steel" aria-pressed="false">Металлоконструкции</button>
+      <button class="pill" type="button" data-filter="foundation" aria-pressed="false">Фундаменты</button>
+      <button class="pill" type="button" data-filter="convert" aria-pressed="false">Конвертеры</button>
+    </div>
+
+    <ul class="tool-grid" id="tool-grid">
+      <li class="tool" data-cat="loads">
+        <h3 class="tool__title"><a href="#" data-dead>Сбор нагрузок</a></h3>
+        <p class="tool__text">Постоянные и временные нагрузки по СП&nbsp;20.13330 в одной таблице.</p>
+        <p class="tool__cat">Нагрузки</p>
+      </li>
+      <li class="tool" data-cat="steel">
+        <h3 class="tool__title"><a href="#" data-dead>Расчёт балки</a></h3>
+        <p class="tool__text">Прогиб, изгибающий момент, поперечная сила, подбор сечения.</p>
+        <p class="tool__cat">Металлоконструкции</p>
+      </li>
+      <li class="tool" data-cat="foundation">
+        <h3 class="tool__title"><a href="#" data-dead>Давление под фундаментом</a></h3>
+        <p class="tool__text">Проверка давления под подошвой при внецентренном сжатии.</p>
+        <p class="tool__cat">Фундаменты</p>
+      </li>
+      <li class="tool" data-cat="concrete">
+        <h3 class="tool__title"><a href="#" data-dead>Подбор арматуры</a></h3>
+        <p class="tool__text">Площадь рабочей арматуры для изгибаемого элемента.</p>
+        <p class="tool__cat">Железобетон</p>
+      </li>
+      <li class="tool" data-cat="loads">
+        <h3 class="tool__title"><a href="#" data-dead>Снеговая нагрузка</a></h3>
+        <p class="tool__text">Расчёт по СП&nbsp;20.13330 с учётом района и профиля покрытия.</p>
+        <p class="tool__cat">Нагрузки</p>
+      </li>
+      <li class="tool" data-cat="convert">
+        <h3 class="tool__title"><a href="#" data-dead>Конвертер единиц</a></h3>
+        <p class="tool__text">кН, тс, кгс, МПа, кгс/см² — перевод инженерных величин.</p>
+        <p class="tool__cat">Конвертеры</p>
+      </li>
+    </ul>
+    <p class="tools__empty" id="tools-empty" hidden>В этой категории инструменты появятся позже.</p>
+  </section>
+
+  <section class="showcase" aria-labelledby="software-title">
+    <div class="showcase__panel">
+      <div class="showcase__body">
+        <p class="showcase__label">Программа</p>
+        <h2 class="section-title" id="software-title">StructLab</h2>
+        <p class="showcase__text">
+          Расчёт и конструирование железобетонных элементов: балки, колонны, плиты.
+          Расчётные сочетания, подбор арматуры, проверка по предельным состояниям
+          и готовый отчёт для пояснительной записки.
+        </p>
+        <ul class="showcase__spec">
+          <li>Версия 3.2 — обновлена 12.09.2026</li>
+          <li>Windows 10 и 11, 64-бит</li>
+          <li>Демо-версия: 30 дней без ограничений расчёта</li>
+        </ul>
+        <p class="showcase__actions">
+          <a class="btn btn--dark" href="#" data-dead>Скачать демо</a>
+          <a class="btn btn--light" href="#" data-dead>Купить — 24 900 ₽</a>
+        </p>
+      </div>
+
+      <figure class="shot shot--4x3 showcase__shot">
+        <!--
+          MIDJOURNEY (интерфейс программы, 4:3):
+          Clean engineering software interface on a laptop screen: rebar schedule table, beam
+          cross-section drawing and result summary cards, light UI with warm brown accents,
+          monospaced numbers, no readable text, slight perspective, --ar 4:3
+        -->
+        <img src="img/pageIndex2/2.jpg" alt="Заглушка вместо скриншота программы StructLab"
+             width="1024" height="768">
+        <figcaption>Скриншот программы — заглушка 4:3</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="articles" aria-labelledby="articles-title">
+    <h2 class="section-title" id="articles-title">Материалы</h2>
+    <p class="section-lead">Инструкции по расчётам, разборы нормативов и работа с расчётными комплексами.</p>
+
+    <div class="post-grid">
+      <article class="post post--feature">
+        <figure class="shot shot--3x2 post__shot">
+          <!--
+            MIDJOURNEY (обложка статьи, 3:2):
+            Foundation construction site at dusk: concrete footing, rebar cage and formwork,
+            engineer's tripod level in the foreground, cool grey and warm brown tones, calm
+            documentary photography, no people, no text, --ar 3:2
+          -->
+          <img src="img/pageIndex2/4.jpg" alt="Заглушка обложки статьи об осадке фундамента"
+               width="1024" height="683">
+        </figure>
+        <div class="post__body">
+          <p class="post__meta">Инструкция · 14 минут чтения</p>
+          <h3 class="post__title"><a href="#" data-dead>Расчёт осадки фундамента: порядок и типичные ошибки</a></h3>
+          <p class="post__text">Что подготовить до расчёта, какие характеристики грунта нужны и где чаще всего ошибаются в отчётах.</p>
+        </div>
+      </article>
+
+      <article class="post">
+        <figure class="shot shot--1x1 post__thumb">
+          <!--
+            MIDJOURNEY (миниатюра, 1:1):
+            Minimal square technical drawing of a pitched roof with snow load arrows, thin dark
+            lines on white background, engineering sketch style, no text, --ar 1:1
+          -->
+          <img src="img/pageIndex2/1.jpg" alt="Заглушка миниатюры статьи о снеговой нагрузке"
+               width="1024" height="1024">
+        </figure>
+        <div class="post__body">
+          <p class="post__meta">Нормативы · 9 минут</p>
+          <h3 class="post__title"><a href="#" data-dead>Определение снеговой нагрузки по СП&nbsp;20.13330.2016</a></h3>
+        </div>
+      </article>
+
+      <article class="post">
+        <figure class="shot shot--1x1 post__thumb">
+          <img src="img/pageIndex2/1.jpg" alt="Заглушка миниатюры статьи о результатах SCAD"
+               width="1024" height="1024">
+        </figure>
+        <div class="post__body">
+          <p class="post__meta">Программы · 12 минут</p>
+          <h3 class="post__title"><a href="#" data-dead>Работа с результатами SCAD: что проверять первым делом</a></h3>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="cta__inner">
+      <h2 class="cta__title">Нужен полноценный расчёт?</h2>
+      <p class="cta__text">
+        Настольные программы закрывают то, что не решается калькулятором: расчётные сочетания,
+        оптимизацию сечения, отчёты и чертежи.
+      </p>
+      <p class="cta__actions">
+        <a class="btn btn--light" href="#" data-dead>Посмотреть программы</a>
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="foot__cols">
+    <div class="foot__col">
+      <p class="foot__head">Инструменты</p>
+      <ul>
+        <li><a href="#" data-dead>Сбор нагрузок</a></li>
+        <li><a href="#" data-dead>Расчёт балки</a></li>
+        <li><a href="#" data-dead>Фундаменты</a></li>
+        <li><a href="#" data-dead>Арматура</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <p class="foot__head">Программы</p>
+      <ul>
+        <li><a href="#" data-dead>StructLab</a></li>
+        <li><a href="#" data-dead>Демо-версии</a></li>
+        <li><a href="#" data-dead>История версий</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <p class="foot__head">Материалы</p>
+      <ul>
+        <li><a href="#" data-dead>Статьи</a></li>
+        <li><a href="#" data-dead>Нормативные документы</a></li>
+      </ul>
+    </div>
+    <div class="foot__col">
+      <p class="foot__head">Проект</p>
+      <ul>
+        <li><a href="#" data-dead>О проекте</a></li>
+        <li><a href="#" data-dead>Контакты</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="foot__note">
+    <strong>Прототип, вариант 2 из 5.</strong> Страница отвечает на вопрос: подходит ли проекту
+    светлая композиция со скруглениями, крупным первым экраном и переключателем категорий.
+    Ссылки никуда не ведут, изображения — заглушки, тексты черновые.
+    Задача, которой служит страница: инженер находит бесплатный инструмент и переходит
+    к программе; корпус задач по проекту не собирался, структура — предположение.
+  </p>
+  <p class="foot__meta">Исполнители: Хмелев Артём (дизайн, frontend), Дмитрий Голубев (координатор проекта).</p>
+</footer>
+
+<script src="js/pageIndex2.js"></script>
+</body>
+</html>
