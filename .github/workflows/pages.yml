@@ -1,0 +1,52 @@
+name: Публикация макетов на GitHub Pages
+
+# Публикуем только файлы сайта: index.html, варианты главной, css, js, img.
+# Служебные файлы (AGENTS.md, .gitignore, .github, docs/) на сайт не попадают.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Получить репозиторий
+        uses: actions/checkout@v4
+
+      - name: Собрать каталог сайта
+        run: |
+          mkdir -p _site
+          cp index.html pageIndex*.html _site/
+          cp -r css js img _site/
+          touch _site/.nojekyll
+          # Предпросмотр для заказчика: поисковикам индексировать нечего.
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          find _site -type f | sort | head -50
+
+      - name: Включить Pages, если он ещё не включён
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Загрузить файлы сайта
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Опубликовать
+        id: deployment
+        uses: actions/deploy-pages@v4
